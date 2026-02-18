@@ -1,20 +1,27 @@
 # 🧠 Code Comment Generator (Inline)
 
-Generate **inline comments for Python functions** using Large Language Models powered by **Qwen2.5-Coder** and Streamlit.
-
-This application allows users to paste any Python function and automatically receive a version of the same code with meaningful inline comments added — without modifying the original logic.
+> Automatically generate clean inline `#` comments for Python functions  
+> Powered by **Qwen2.5-Coder** and built with **Streamlit**
 
 ---
 
-## 🚀 Features
+## 🚀 Overview
 
-- 📝 Input any Python function
-- 💬 Automatically generate inline `#` comments
-- 🧠 Uses Qwen2.5-Coder (0.5B / 1.5B)
-- 🎛 Adjustable generation settings (temperature, max tokens)
-- 💾 Download commented code as `.py`
-- ⚡ Clean and interactive Streamlit UI
-- 🖥 Runs on CPU or GPU
+This AI-powered web application allows you to paste any Python function  
+and receive the same function enhanced with meaningful inline comments —  
+without changing logic, variable names, or structure.
+
+---
+
+## ✨ Features
+
+- 📝 Paste any Python function
+- 💬 Adds inline `#` comments only
+- 🧠 Powered by Qwen2.5-Coder models
+- 🎛 Adjustable temperature & token settings
+- 💾 Download as `.py` file
+- ⚡ Clean, interactive Streamlit interface
+- 🖥 Works on CPU or GPU
 
 ---
 
@@ -24,70 +31,51 @@ This application allows users to paste any Python function and automatically rec
 - Streamlit
 - HuggingFace Transformers
 - PyTorch
-- Qwen2.5-Coder Models
+- Qwen2.5-Coder (0.5B / 1.5B)
 
 ---
 
 ## 📂 Project Structure
 
-📦 code-comment-generator
-┣ 📜 app.py
-┣ 📜 README.md
-┗ 📦 requirements.txt
+code-comment-generator/
+│
+├── app.py
+├── README.md
+└── requirements.txt
 
 
 ---
 
-## ⚙ Installation
+# ⚙ Installation
 
-### 1️⃣ Clone the Repository
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/VivekanandVivek/code-comment-generator.git
 cd code-comment-generator
-
----
-
-2️⃣ Create Virtual Environment (Recommended)
+2️⃣ Create Virtual Environment
 python -m venv venv
-
 Activate Environment
-
 Windows
 
 venv\Scripts\activate
-
-
 Mac/Linux
 
 source venv/bin/activate
-
 3️⃣ Install Dependencies
 pip install streamlit torch transformers accelerate
-
 ▶ Run the Application
 streamlit run app.py
-
-
-Then open in your browser:
+Open in browser:
 
 http://localhost:8501
-
----
-
 🧠 Supported Models
+Available from sidebar:
 
-Selectable from the sidebar:
-
-Qwen/Qwen2.5-Coder-0.5B
-Fast and lightweight.
-
-Qwen/Qwen2.5-Coder-1.5B
-Better inline comment quality.
-
-Both models are loaded dynamically and cached for efficient performance.
-
----
+Model	Description
+Qwen2.5-Coder-0.5B	Fast & lightweight
+Qwen2.5-Coder-1.5B	Higher quality comments
+Models are loaded dynamically and cached for efficiency.
 
 🧪 Example
 🔹 Input
@@ -95,33 +83,20 @@ def factorial(n):
     if n == 0:
         return 1
     return n * factorial(n-1)
-
----
-
 🔹 Output
 def factorial(n):
-    # Check if n is equal to 0 (base case)
+    # Check if n equals 0 (base case)
     if n == 0:
-        # Return 1 since factorial of 0 is 1
+        # Return 1 since factorial(0) = 1
         return 1
-    # Recursively multiply n by factorial of n-1
+    # Multiply n with factorial of n-1 (recursive step)
     return n * factorial(n-1)
-
----
-
-### 🖥 System Requirements
-
-| Model | CPU | GPU |
-|--------|------|------|
-| 0.5B | ✅ Works | Optional |
-| 1.5B | ⚠ Slower | Recommended (6GB+ VRAM) |
-
----
-
-### 👨‍💻 Author
-
-**Vivekanand Pandey**  
-M.Tech (AI) – IIT Patna  
-Focused on LLMs, Code Intelligence, and Generative AI.
-
+🖥 System Requirements
+Model	CPU	GPU
+0.5B	✅ Supported	Optional
+1.5B	⚠ Slower	Recommended (6GB+ VRAM)
+👨‍💻 Author
+Vivekanand Pandey
+M.Tech (AI) – IIT Patna
+Focused on LLMs, Code Intelligence, and Generative AI
 
