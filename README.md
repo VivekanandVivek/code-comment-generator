@@ -53,37 +53,79 @@ code-comment-generator/
 ```bash
 git clone https://github.com/VivekanandVivek/code-comment-generator.git
 cd code-comment-generator
-2️⃣ Create Virtual Environment
+```
+
+---
+
+## 2️⃣ Create Virtual Environment
+
+```bash
 python -m venv venv
-Activate Environment
-Windows
+```
 
+### Activate Environment
+
+**Windows**
+```bash
 venv\Scripts\activate
-Mac/Linux
+```
 
+**Mac/Linux**
+```bash
 source venv/bin/activate
-3️⃣ Install Dependencies
-pip install streamlit torch transformers accelerate
-▶ Run the Application
-streamlit run app.py
-Open in browser:
+```
 
+---
+
+## 3️⃣ Install Dependencies
+
+```bash
+pip install streamlit torch transformers accelerate
+```
+
+---
+
+# ▶ Run the Application
+
+```bash
+streamlit run app.py
+```
+
+Open in your browser:
+
+```
 http://localhost:8501
-🧠 Supported Models
+```
+
+---
+
+# 🧠 Supported Models
+
 Available from sidebar:
 
-Model	Description
-Qwen2.5-Coder-0.5B	Fast & lightweight
-Qwen2.5-Coder-1.5B	Higher quality comments
+| Model | Description |
+|-------|-------------|
+| Qwen2.5-Coder-0.5B | Fast & lightweight |
+| Qwen2.5-Coder-1.5B | Higher quality comments |
+
 Models are loaded dynamically and cached for efficiency.
 
-🧪 Example
-🔹 Input
+---
+
+# 🧪 Example
+
+## 🔹 Input
+
+```python
 def factorial(n):
     if n == 0:
         return 1
     return n * factorial(n-1)
-🔹 Output
+```
+
+## 🔹 Output
+
+```python
 def factorial(n):
     # Check if n equals 0 (base case)
     if n == 0:
@@ -91,12 +133,21 @@ def factorial(n):
         return 1
     # Multiply n with factorial of n-1 (recursive step)
     return n * factorial(n-1)
-🖥 System Requirements
-Model	CPU	GPU
-0.5B	✅ Supported	Optional
-1.5B	⚠ Slower	Recommended (6GB+ VRAM)
-👨‍💻 Author
-Vivekanand Pandey
-M.Tech (AI) – IIT Patna
-Focused on LLMs, Code Intelligence, and Generative AI
+```
 
+---
+
+# 🖥 System Requirements
+
+| Model | CPU | GPU |
+|-------|------|------|
+| 0.5B | ✅ Supported | Optional |
+| 1.5B | ⚠ Slower | Recommended (6GB+ VRAM) |
+
+---
+
+# 👨‍💻 Author
+
+**Vivekanand Pandey**  
+M.Tech (AI) – IIT Patna  
+Focused on LLMs, Code Intelligence, and Generative AI
