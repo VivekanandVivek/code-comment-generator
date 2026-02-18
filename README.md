@@ -48,59 +48,49 @@ cd code-comment-generator
 
 ---
 
-## 2️⃣ Create Virtual Environment (Recommended)
-
-```bash
+2️⃣ Create Virtual Environment (Recommended)
 python -m venv venv
 
+Activate Environment
 
-## Activate the Environment
+Windows
 
-**Windows**
-```bash
 venv\Scripts\activate
 
 
-**Mac/Linux**
-```bash
+Mac/Linux
+
 source venv/bin/activate
 
----
-
-## 3️⃣ Install Dependencies
-
-```bash
+3️⃣ Install Dependencies
 pip install streamlit torch transformers accelerate
 
-
-## ▶ Run the Application
-
-```bash
+▶ Run the Application
 streamlit run app.py
 
 
-Then open in browser:
+Then open in your browser:
+
 http://localhost:8501
 
 ---
 
-### 🧠 Supported Models
+🧠 Supported Models
 
 Selectable from the sidebar:
 
-- **Qwen/Qwen2.5-Coder-0.5B**  
-  Fast and lightweight.
+Qwen/Qwen2.5-Coder-0.5B
+Fast and lightweight.
 
-- **Qwen/Qwen2.5-Coder-1.5B**  
-  Provides better inline comment quality.
+Qwen/Qwen2.5-Coder-1.5B
+Better inline comment quality.
 
 Both models are loaded dynamically and cached for efficient performance.
 
 ---
 
-### Example Input
-
-```python
+🧪 Example
+🔹 Input
 def factorial(n):
     if n == 0:
         return 1
@@ -108,9 +98,7 @@ def factorial(n):
 
 ---
 
-### Example output
-
-```python
+🔹 Output
 def factorial(n):
     # Check if n is equal to 0 (base case)
     if n == 0:
