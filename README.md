@@ -46,12 +46,12 @@ This application allows users to paste any Python function and automatically rec
 git clone https://github.com/VivekanandVivek/code-comment-generator.git
 cd code-comment-generator
 
-### 2️⃣ Create Virtual Environment (Recommended)
+## 2️⃣ Create Virtual Environment (Recommended)
 
 ```bash
 python -m venv venv
 
-### Activate the Environment
+## Activate the Environment
 
 **Windows**
 ```bash
@@ -62,7 +62,7 @@ venv\Scripts\activate
 ```bash
 source venv/bin/activate
 
-### 3️⃣ Install Dependencies
+## 3️⃣ Install Dependencies
 
 ```bash
 pip install streamlit torch transformers accelerate
@@ -77,7 +77,7 @@ streamlit run app.py
 Then open in browser:
 http://localhost:8501
 
-## 🧠 Supported Models
+### 🧠 Supported Models
 
 Selectable from the sidebar:
 
@@ -109,7 +109,7 @@ def factorial(n):
     # Recursively multiply n by factorial of n-1
     return n * factorial(n-1)
 
-## 🖥 System Requirements
+### 🖥 System Requirements
 
 | Model | CPU | GPU |
 |--------|------|------|
@@ -117,7 +117,7 @@ def factorial(n):
 | 1.5B | ⚠ Slower | Recommended (6GB+ VRAM) |
 
 
-## 👨‍💻 Author
+### 👨‍💻 Author
 
 **Vivekanand Pandey**  
 M.Tech (AI) – IIT Patna  
