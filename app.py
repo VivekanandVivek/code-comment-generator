@@ -11,7 +11,9 @@ st.set_page_config(
 st.title("🧠 Code Comment Generator")
 st.markdown("Generate inline comments for any Python function using Qwen Code LLM.")
 
+# =========================
 # Sidebar Model Selection
+# =========================
 
 st.sidebar.header("⚙ Model Settings")
 
@@ -26,7 +28,10 @@ model_option = st.sidebar.selectbox(
 temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.2)
 max_tokens = st.sidebar.slider("Max New Tokens", 50, 400, 250)
 
+
+# =========================
 # Model Loader (Cached)
+# =========================
 
 @st.cache_resource
 def load_model(model_name):
@@ -56,6 +61,7 @@ with st.spinner("🔄 Loading model... This may take a few seconds."):
 
 model.eval()
 
+
 # Main UI
 
 code_input = st.text_area(
@@ -72,34 +78,41 @@ if st.button("🚀 Generate Inline Comments"):
         st.warning("Please enter Python code.")
     else:
 
-        prompt = f"""You are an expert Python developer.
+        prompt = f"""
+You are a strict Python code annotator.
 
-Your task is to add inline comments using ONLY '#' symbol.
-You must not add docstrings.
-You must not rename variables.
-You must not modify function names.
-You must not change the logic.
-You must return the exact same code with added '#' comments.
+Your job is to add exactly ONE inline comment for EVERY executable line.
 
-Example format:
+Rules:
+- Use ONLY '#' comments
+- Add one comment ABOVE every non-empty line
+- Do not skip any line
+- Do not add docstrings
+- Do not modify logic
+- Do not rename variables
+- Do not remove lines
+- Return full code with added comments
+
+Example:
 
 Input:
 def add(a, b):
     return a + b
 
 Output:
+# Define function add with parameters a and b
 def add(a, b):
-    # Return the sum of a and b
+    # Return sum of a and b
     return a + b
 
-
-Now perform the same transformation.
+Now annotate this code:
 
 Input:
 {code_input}
 
 Output:
 """
+
 
 
         with st.spinner("🤖 Generating comments..."):
@@ -112,7 +125,7 @@ Output:
                     **inputs,
                     max_new_tokens=max_tokens,
                     temperature=0.0,
-                    top_p=0.9,
+                    top_p=1.0,
                     do_sample=False
                 )
 
